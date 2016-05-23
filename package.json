@@ -1,0 +1,23 @@
+{
+  "name": "settlers-of-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FakeYou/settlers-of-react.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FakeYou/settlers-of-react/issues"
+  },
+  "homepage": "https://github.com/FakeYou/settlers-of-react#readme",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "cli-color": "^1.1.0"
+  }
+}
