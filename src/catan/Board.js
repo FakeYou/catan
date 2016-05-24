@@ -14,4 +14,8 @@ export default class Board {
 
 		return this.tiles[key];
 	}
+
+	getTilesByNumber(number) {
+		return Object.values(this.tiles).filter(tile => tile.number === number);
+	}
 }

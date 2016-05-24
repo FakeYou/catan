@@ -4,30 +4,39 @@ jest.unmock('../Tile');
 import Board from '../Board';
 import Tile from '../Tile';
 
+let board;
+let tiles;
+
 describe('Board', () => {
+	beforeEach(() => {
+		tiles = [
+			new Tile(0, 0, 0, Tile.Resources.DESERT),
+			new Tile(0, 1, -1, Tile.Resources.LUMBER, 2),
+			new Tile(1, 0, -1, Tile.Resources.WOOL, 3),
+			new Tile(1, -1, 0, Tile.Resources.GRAIN, 4),
+			new Tile(0, -1, 1, Tile.Resources.BRICK, 5),
+			new Tile(-1, 0, 1, Tile.Resources.ORE, 5),
+			new Tile(-1, 1, 0, Tile.Resources.WATER),
+		];
+
+		board = new Board(tiles);
+	})
+
 	it('constructs with `tiles` property', () => {
-		const board = new Board([
-			new Tile(0, 0, 0, Tile.Resources.WATER)
-		]);
-
 		expect(board.tiles).toEqual(jasmine.any(Object));
-		expect(Object.values(board.tiles).length).toBe(1);
+		expect(Object.values(board.tiles).length).toBe(tiles.length);
 	});
 
-	it('gives the correct `Tile` when using `getTile`', () => {
-		const tile = new Tile(3, 2, 1, Tile.Resources.WATER);
-
-		const board = new Board([tile]);
-
-		expect(board.getTile(3, 2, 1)).toBe(tile);
+	it('gives the correct `Tile` when calling `getTile`', () => {
+		expect(board.getTile(0, 0, 0)).toBe(tiles[0]);
+		expect(board.getTile(0, -1, 1)).toBe(tiles[4]);
 	});
 
-	it('gives the correct `Tile` when using `getTile` with `Tile.getNeighbour`', () => {
-		const center = new Tile(0, 0, 0, Tile.Resources.WATER);
-		const south = new Tile(0, -1, 1, Tile.Resources.WATER);
+	it('gives the correct `Tile` when calling `getTile` with `Tile.getNeighbour`', () => {
+		expect(board.getTile(...tiles[0].getNeighbour(Tile.Directions.SOUTH))).toBe(tiles[4]);
+	});
 
-		const board = new Board([center, south]);
-
-		expect(board.getTile(...center.getNeighbour(Tile.Directions.SOUTH))).toBe(south);
+	it('gives all tiles with matching `number` property', () => {
+		expect(board.getTilesByNumber(5)).toEqual([tiles[4], tiles[5]]);
 	})
 })
