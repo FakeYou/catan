@@ -1,6 +1,5 @@
 var clc = require('cli-color');
 
-
 const resources = {
 	LUMBER: 1,
 	WOOL: 2,
@@ -68,19 +67,19 @@ function randomSettlement(chance = 0.5) {
 function resourceColors(resource) {
 	switch(resource) {
 		case resources.LUMBER:
-			return clc.whiteBright.bgGreen;
+			return clc.redBright.bgGreen;
 		case resources.WOOL:
-			return clc.black.bgGreenBright;
+			return clc.redBright.bgGreenBright;
 		case resources.GRAIN:
-			return clc.black.bgYellowBright;
+			return clc.redBright.bgYellowBright;
 		case resources.BRICK:
-			return clc.black.bgRedBright;
+			return clc.redBright.bgRedBright;
 		case resources.ORE:
-			return clc.whiteBright.bgBlackBright;
+			return clc.redBright.bgBlackBright;
 		case resources.DESERT:
-			return clc.yellowBright.bgYellowBright;
+			return clc.redBright.bgYellowBright;
 		case resources.WATER:
-			return clc.cyan.bgCyan;
+			return clc.redBright.bgCyan;
 	}
 
 	return clc.black.bgMagentaBright;
@@ -161,9 +160,7 @@ function settlement(x, y, vert, type, player) {
 map.forEach((tile) => {
 	resource(tile.x, tile.y, tile.resource);
 
-	if(tile.resource !== resources.DESERT && tile.resource !== resources.WATER) {
-		number(tile.x, tile.y, tile.number, tile.resource);
-	}
+	number(tile.x, tile.y, tile.number, tile.resource);
 
 	if(tile.resource !== resources.WATER) {
 		road(tile.x, tile.y, 'n', randomPlayer(0));
