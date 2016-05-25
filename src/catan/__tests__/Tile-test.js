@@ -13,17 +13,17 @@ describe('Tile', () => {
 		expect(tile.number).toBe(8);
 	});
 
-	it('constructs without `number` for `desert` and `water` resources', () => {
-		expect(() => { new Tile(0, 0, 0, Tile.Resources.WATER) }).not.toThrow();
-		expect(() => { new Tile(0, 0, 0, Tile.Resources.DESERT) }).not.toThrow();
-	});
-
 	it('to throw an error when constructed with an incorrect `number`', () => {
 		expect(() => { new Tile(0, 0, 0, Tile.Resources.ORE, 1) }).toThrow();
 		expect(() => { new Tile(0, 0, 0, Tile.Resources.ORE, -1) }).toThrow();
 		expect(() => { new Tile(0, 0, 0, Tile.Resources.ORE, 7) }).toThrow();
 		expect(() => { new Tile(0, 0, 0, Tile.Resources.ORE, 13) }).toThrow();
 		expect(() => { new Tile(0, 0, 0, Tile.Resources.ORE, 'hello') }).toThrow();
+	});
+
+	it('constructs without `number` for `desert` and `water` resources', () => {
+		expect(() => { new Tile(0, 0, 0, Tile.Resources.WATER) }).not.toThrow();
+		expect(() => { new Tile(0, 0, 0, Tile.Resources.DESERT) }).not.toThrow();
 	});
 
 	it('to throw an error when constructed with an incorrect `resource`', () => {
