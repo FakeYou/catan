@@ -9,6 +9,14 @@ export default class Edge {
 		}
 		this.position = position;
 	}
+
+	get key() {
+		return Edge.key(this.q, this.r, this.position);
+	}
+
+	static key(q, r, position) {
+		return `${q},${r} ${position.substr(0, 1)}`;
+	}
 }
 
 Edge.Position = {
