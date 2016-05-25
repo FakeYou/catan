@@ -15,20 +15,20 @@ describe('Tile', () => {
 	});
 
 	it('throws an error when constructed with an incorrect `number`', () => {
-		expect(() => { new Tile(0, 0, Tile.Resource.ORE, 1) }).toThrow();
-		expect(() => { new Tile(0, 0, Tile.Resource.ORE, -1) }).toThrow();
-		expect(() => { new Tile(0, 0, Tile.Resource.ORE, 7) }).toThrow();
-		expect(() => { new Tile(0, 0, Tile.Resource.ORE, 13) }).toThrow();
-		expect(() => { new Tile(0, 0, Tile.Resource.ORE, 'hello') }).toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.ORE, 1)).toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.ORE, -1)).toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.ORE, 7)).toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.ORE, 13)).toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.ORE, 'hello')).toThrow();
 	});
 
 	it('constructs without `number` for `desert` and `water` resources', () => {
-		expect(() => { new Tile(0, 0, Tile.Resource.WATER) }).not.toThrow();
-		expect(() => { new Tile(0, 0, Tile.Resource.DESERT) }).not.toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.WATER)).not.toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.DESERT)).not.toThrow();
 	});
 
 	it('throws an error when constructed with an incorrect `resource`', () => {
-		expect(() => { new Tile(0, 0, Tile.Resource.UNDEFINED, 1) }).toThrow();
+		expect(() => new Tile(0, 0, undefined, 1)).toThrow();
 	});
 
 	it('gives correct coords for when calling `getNeighbour`', () => {
@@ -43,7 +43,7 @@ describe('Tile', () => {
 	});
 
 	it('throws an error when calling `getNeighbour` with an incorrect direction', () => {
-		expect(() => { new Tile(0, 0, Tile.Resource.WATER).getNeighbour(undefined) }).toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.WATER).getNeighbour(undefined)).toThrow();
 	});
 
 	it('has a `key` property', () => {

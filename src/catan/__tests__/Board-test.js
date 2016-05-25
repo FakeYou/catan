@@ -1,3 +1,5 @@
+/* eslint-disable no-new */
+
 jest.unmock('../Board');
 jest.unmock('../Tile');
 
