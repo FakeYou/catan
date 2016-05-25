@@ -1,3 +1,7 @@
 import Board from './Board';
 
-console.log(new Board(1, 2));
+export default class Catan {
+	constructor() {
+		this.board = new Board();
+	}
+}
