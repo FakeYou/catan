@@ -1,12 +1,17 @@
 export default class Edge {
-	constructor(q, r, edge) {
+	constructor(q, r, position) {
 		this.q = q;
 		this.r = r;
-		this.edge = edge;
+
+		// Check if a valid `position` was given.
+		if (!(position in Edge.Position)) {
+			throw new Error(`Invalid position, should one of ${Object.keys(Edge.Position)}`);
+		}
+		this.position = position;
 	}
 }
 
-Edge.Directions = {
+Edge.Position = {
 	NORTH: 'NORTH',
 	EAST: 'EAST',
 	WEST: 'WEST',
