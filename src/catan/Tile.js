@@ -4,13 +4,13 @@ export default class Tile {
 		this.r = r;
 
 		// Check if a valid `resource` was given.
-		if (!(resource in Tile.Resources)) {
-			throw new Error('Invalid resource');
+		if (!(resource in Tile.Resource)) {
+			throw new Error(`Invalid resource, should be one of ${Object.keys(Tile.Direction)}`);
 		}
 		this.resource = resource;
 
 		// For all resources except `water` and `desert` check if a valid `number` was given.
-		if (resource !== Tile.Resources.WATER && resource !== Tile.Resources.DESERT) {
+		if (resource !== Tile.Resource.WATER && resource !== Tile.Resource.DESERT) {
 			if (!Number.isInteger(number) || number < 2 || number > 12 || number === 7) {
 				throw new Error('Invalid number');
 			}
@@ -21,26 +21,26 @@ export default class Tile {
 
 	getNeighbour(direction) {
 		switch (direction) {
-			case Tile.Directions.NORTH: {
+			case Tile.Direction.NORTH: {
 				return [this.q, this.r - 1];
 			}
-			case Tile.Directions.NORTHEAST: {
+			case Tile.Direction.NORTHEAST: {
 				return [this.q + 1, this.r - 1];
 			}
-			case Tile.Directions.SOUTHEAST: {
+			case Tile.Direction.SOUTHEAST: {
 				return [this.q + 1, this.r];
 			}
-			case Tile.Directions.SOUTH: {
+			case Tile.Direction.SOUTH: {
 				return [this.q, this.r + 1];
 			}
-			case Tile.Directions.SOUTHWEST: {
+			case Tile.Direction.SOUTHWEST: {
 				return [this.q - 1, this.r + 1];
 			}
-			case Tile.Directions.NORTHWEST: {
+			case Tile.Direction.NORTHWEST: {
 				return [this.q - 1, this.r];
 			}
 			default: {
-				return [0, 0];
+				throw new Error(`Unknown direction, should be one of ${Object.keys(Tile.Direction)}`);
 			}
 		}
 	}
@@ -60,7 +60,7 @@ export default class Tile {
 	}
 }
 
-Tile.Directions = {
+Tile.Direction = {
 	NORTH: 'NORTH',
 	NORTHEAST: 'NORTHEAST',
 	SOUTHEAST: 'SOUTHEAST',
@@ -69,7 +69,7 @@ Tile.Directions = {
 	NORTHWEST: 'NORTHWEST',
 };
 
-Tile.Resources = {
+Tile.Resource = {
 	LUMBER: 'LUMBER',
 	WOOL: 'WOOL',
 	GRAIN: 'GRAIN',

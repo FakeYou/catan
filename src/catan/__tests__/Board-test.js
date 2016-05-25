@@ -10,13 +10,13 @@ let tiles;
 describe('Board', () => {
 	beforeEach(() => {
 		tiles = [
-			new Tile(0, 0, Tile.Resources.DESERT),
-			new Tile(0, -1, Tile.Resources.LUMBER, 2),
-			new Tile(1, -1, Tile.Resources.WOOL, 3),
-			new Tile(1, 0, Tile.Resources.GRAIN, 4),
-			new Tile(0, 1, Tile.Resources.BRICK, 5),
-			new Tile(-1, 1, Tile.Resources.ORE, 5),
-			new Tile(-1, 0, Tile.Resources.WATER),
+			new Tile(0, 0, Tile.Resource.DESERT),
+			new Tile(0, -1, Tile.Resource.LUMBER, 2),
+			new Tile(1, -1, Tile.Resource.WOOL, 3),
+			new Tile(1, 0, Tile.Resource.GRAIN, 4),
+			new Tile(0, 1, Tile.Resource.BRICK, 5),
+			new Tile(-1, 1, Tile.Resource.ORE, 5),
+			new Tile(-1, 0, Tile.Resource.WATER),
 		];
 
 		board = new Board(tiles);
@@ -33,7 +33,7 @@ describe('Board', () => {
 	});
 
 	it('gives the correct `Tile` when calling `getTile` with `Tile.getNeighbour`', () => {
-		expect(board.getTile(...tiles[0].getNeighbour(Tile.Directions.SOUTH))).toBe(tiles[4]);
+		expect(board.getTile(...tiles[0].getNeighbour(Tile.Direction.SOUTH))).toBe(tiles[4]);
 	});
 
 	it('gives all tiles with matching `number` property', () => {
