@@ -15,6 +15,7 @@ module.exports = {
 		'it': false,
 		'beforeEach': false,
 		'expect': false,
-		'jasmine': false
+		'jasmine': false,
+		'xit': false
 	}
 };
