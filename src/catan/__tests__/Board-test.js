@@ -13,11 +13,11 @@ describe('Board', () => {
 	beforeEach(() => {
 		tiles = [
 			new Tile(0, 0, Tile.Resource.DESERT),
-			new Tile(0, -1, Tile.Resource.LUMBER, 2),
-			new Tile(1, -1, Tile.Resource.WOOL, 3),
-			new Tile(1, 0, Tile.Resource.GRAIN, 4),
-			new Tile(0, 1, Tile.Resource.BRICK, 5),
-			new Tile(-1, 1, Tile.Resource.ORE, 5),
+			new Tile(0, -1, Tile.Resource.FOREST, 2),
+			new Tile(1, -1, Tile.Resource.PASTURE, 3),
+			new Tile(1, 0, Tile.Resource.FIELD, 4),
+			new Tile(0, 1, Tile.Resource.HILL, 5),
+			new Tile(-1, 1, Tile.Resource.MOUNTAIN, 5),
 			new Tile(-1, 0, Tile.Resource.WATER),
 		];
 

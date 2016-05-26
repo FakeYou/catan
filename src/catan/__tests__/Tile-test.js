@@ -6,20 +6,20 @@ import Tile from '../Tile';
 
 describe('Tile', () => {
 	it('constructs with `q`, `r`, `resource` and `number` properties', () => {
-		const tile = new Tile(1, 3, Tile.Resource.LUMBER, 8);
+		const tile = new Tile(1, 3, Tile.Resource.FOREST, 8);
 
 		expect(tile.q).toBe(1);
 		expect(tile.r).toBe(3);
-		expect(tile.resource).toBe(Tile.Resource.LUMBER);
+		expect(tile.resource).toBe(Tile.Resource.FOREST);
 		expect(tile.number).toBe(8);
 	});
 
 	it('throws an error when constructed with an incorrect `number`', () => {
-		expect(() => new Tile(0, 0, Tile.Resource.ORE, 1)).toThrow();
-		expect(() => new Tile(0, 0, Tile.Resource.ORE, -1)).toThrow();
-		expect(() => new Tile(0, 0, Tile.Resource.ORE, 7)).toThrow();
-		expect(() => new Tile(0, 0, Tile.Resource.ORE, 13)).toThrow();
-		expect(() => new Tile(0, 0, Tile.Resource.ORE, 'hello')).toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.MOUNTAIN, 1)).toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.MOUNTAIN, -1)).toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.MOUNTAIN, 7)).toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.MOUNTAIN, 13)).toThrow();
+		expect(() => new Tile(0, 0, Tile.Resource.MOUNTAIN, 'hello')).toThrow();
 	});
 
 	it('constructs without `number` for `desert` and `water` resources', () => {

@@ -70,11 +70,11 @@ Tile.Direction = {
 };
 
 Tile.Resource = {
-	LUMBER: 'LUMBER',
-	WOOL: 'WOOL',
-	GRAIN: 'GRAIN',
-	BRICK: 'BRICK',
-	ORE: 'ORE',
+	FOREST: 'FOREST',
+	PASTURE: 'PASTURE',
+	FIELD: 'FIELD',
+	HILL: 'HILL',
+	MOUNTAIN: 'MOUNTAIN',
 	DESERT: 'DESERT',
 	WATER: 'WATER',
 };
