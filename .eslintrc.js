@@ -7,7 +7,9 @@ module.exports = {
 	rules: {
 		'no-console': 0,
 		'indent': ['error', 'tab', { 'SwitchCase': 1 }],
-		'semi': ['error', 'always', { 'omitLastInOneLineBlock': true}]
+		'semi': ['error', 'always', { 'omitLastInOneLineBlock': true }],
+		'max-len': ['error', 120],
+		'brace-style': ['error', 'stroustrup']
 	},
 	globals: {
 		'jest': false,

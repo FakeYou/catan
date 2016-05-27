@@ -5,7 +5,7 @@ export default class Tile {
 
 		// Check if a valid `resource` was given.
 		if (!(resource in Tile.Resource)) {
-			throw new Error(`Invalid resource, should be one of ${Object.keys(Tile.Direction)}`);
+			throw new Error(`Invalid resource, should be one of ${Object.keys(Tile.Resource)}`);
 		}
 		this.resource = resource;
 
@@ -27,6 +27,9 @@ export default class Tile {
 			case Tile.Direction.NORTHEAST: {
 				return [this.q + 1, this.r - 1];
 			}
+			case Tile.Direction.EAST: {
+				return [this.q + 2, this.r - 1];
+			}
 			case Tile.Direction.SOUTHEAST: {
 				return [this.q + 1, this.r];
 			}
@@ -35,6 +38,9 @@ export default class Tile {
 			}
 			case Tile.Direction.SOUTHWEST: {
 				return [this.q - 1, this.r + 1];
+			}
+			case Tile.Direction.WEST: {
+				return [this.q - 2, this.r + 1];
 			}
 			case Tile.Direction.NORTHWEST: {
 				return [this.q - 1, this.r];
@@ -55,6 +61,11 @@ export default class Tile {
 		return [this.q, -this.q - this.r + 0, this.r];
 	}
 
+	get offset() {
+		const [x, y, z] = this.cube;
+		return [x, z + (x + (x & 1)) / 2];
+	}
+
 	static key(q, r) {
 		return `${q},${r}`;
 	}
@@ -63,9 +74,11 @@ export default class Tile {
 Tile.Direction = {
 	NORTH: 'NORTH',
 	NORTHEAST: 'NORTHEAST',
+	EAST: 'EAST',
 	SOUTHEAST: 'SOUTHEAST',
 	SOUTH: 'SOUTH',
 	SOUTHWEST: 'SOUTHWEST',
+	WEST: 'WEST',
 	NORTHWEST: 'NORTHWEST',
 };
 
