@@ -5,7 +5,8 @@ import Road from './pieces/Road';
 import Settlement from './pieces/Settlement';
 
 export default class Player {
-	constructor(name, color) {
+	constructor(game, name, color) {
+		this.game = game;
 		this.name = name;
 
 		// Check if a valid `color` was given.
