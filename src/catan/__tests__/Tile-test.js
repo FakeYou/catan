@@ -51,9 +51,4 @@ describe('Tile', () => {
 		expect(new Tile(0, 0, Tile.Resource.WATER).key).toEqual('0,0');
 		expect(new Tile(1, -3, Tile.Resource.WATER).key).toEqual('1,-3');
 	});
-
-	it('has a `cube` property that converts the tiles axial coords to cube coords', () => {
-		expect(new Tile(0, 0, Tile.Resource.WATER).cube).toEqual([0, 0, 0]);
-		expect(new Tile(1, -2, Tile.Resource.WATER).cube).toEqual([1, 1, -2]);
-	});
 });

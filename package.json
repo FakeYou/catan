@@ -18,7 +18,9 @@
   "homepage": "https://github.com/FakeYou/settlers-of-react#readme",
   "dependencies": {
     "blessed": "^0.1.81",
-    "cli-color": "^1.1.0"
+    "cli-color": "^1.1.0",
+    "faker": "^3.1.0",
+    "lodash": "^4.13.1"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",

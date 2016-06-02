@@ -11,7 +11,7 @@ export default class Location {
 	}
 
 	get offset() {
-		const [x, y, z] = this.cube;
+		const [x, , z] = this.cube;
 		return [x, z + (x + (x & 1)) / 2];
 	}
 }

@@ -16,18 +16,33 @@ describe('Road', () => {
 		player = new Player('test', Player.Color.RED);
 	});
 
-	it('constructs with `q`, `r`, `position` and `player` property', () => {
-		const road = new Road(1, 3, Edge.Position.NORTH, player);
+	it('constructs with a `player` property', () => {
+		const road = new Road(player);
 
-		expect(road.q).toBe(1);
-		expect(road.r).toBe(3);
-		expect(road.position).toBe(Edge.Position.NORTH);
 		expect(road.player).toBe(player);
 	});
 
-	it('extends `Edge`', () => {
-		const road = new Road(0, 0, Edge.Position.NORTH, player);
+	it('constructs with an undefined `edge` property when no extra parameters are given', () => {
+		const road = new Road(player);
 
-		expect(road instanceof Edge).toBeTruthy();
+		expect(road.edge).toBeNull();
+	});
+
+	it('constructs with a `edge` property when given extra parameters', () => {
+		const road = new Road(player, 2, 5, Edge.Position.NORTH);
+
+		expect(road.edge.q).toBe(2);
+		expect(road.edge.r).toBe(5);
+		expect(road.edge.position).toBe(Edge.Position.NORTH);
+	});
+
+	it('has a `setEdge` method', () => {
+		const road = new Road(player);
+
+		road.setEdge(5, 8, Edge.Position.EAST);
+
+		expect(road.edge.q).toBe(5);
+		expect(road.edge.r).toBe(8);
+		expect(road.edge.position).toBe(Edge.Position.EAST);
 	});
 });

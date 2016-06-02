@@ -1,9 +1,25 @@
 import Corner from '../Corner';
 
-export default class Settlement extends Corner {
-	constructor(q, r, position, player) {
-		super(q, r, position);
-
+export default class Settlement {
+	constructor(player, q, r, position) {
 		this.player = player;
+
+		if (q === undefined || r === undefined || position === undefined) {
+			this.corner = null;
+		}
+		else {
+			this.corner = new Corner(q, r, position);
+		}
+	}
+
+	setCorner(q, r, position) {
+		if (this.corner) {
+			this.corner.q = q;
+			this.corner.r = r;
+			this.corner.position = position;
+		}
+		else {
+			this.corner = new Corner(q, r, position);
+		}
 	}
 }

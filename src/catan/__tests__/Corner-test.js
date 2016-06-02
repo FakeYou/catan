@@ -6,7 +6,7 @@ jest.unmock('../utils/Location');
 import Corner from '../Corner';
 
 describe('Corner', () => {
-	it('constructs with `q`, `r` and `position` property', () => {
+	it('constructs with `q`, `r` and `position` properties', () => {
 		const corner = new Corner(1, 3, Corner.Position.RIGHT);
 
 		expect(corner.q).toBe(1);

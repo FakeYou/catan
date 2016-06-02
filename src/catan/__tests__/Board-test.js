@@ -25,7 +25,7 @@ describe('Board', () => {
 		board = new Board(tiles);
 	});
 
-	it('constructs with `tiles` property', () => {
+	it('constructs with a `tiles` property', () => {
 		expect(board.tiles).toEqual(jasmine.any(Object));
 		expect(Object.values(board.tiles).length).toBe(tiles.length);
 	});

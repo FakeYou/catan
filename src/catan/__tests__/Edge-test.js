@@ -6,7 +6,7 @@ jest.unmock('../utils/Location');
 import Edge from '../Edge';
 
 describe('Edge', () => {
-	it('constructs with `q`, `r` and `position` property', () => {
+	it('constructs with `q`, `r` and `position` properties', () => {
 		const edge = new Edge(1, 3, Edge.Position.NORTH);
 
 		expect(edge.q).toBe(1);
