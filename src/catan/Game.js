@@ -3,7 +3,7 @@ import faker from 'faker';
 import Board from './Board';
 import Player from './Player';
 
-export default class Catan {
+export default class Game {
 	constructor(numberOfPlayers = 3) {
 		this.numberOfPlayers = numberOfPlayers;
 		this.players = [];
@@ -14,7 +14,7 @@ export default class Catan {
 			const name = faker.internet.domainWord();
 			const color = Object.values(Player.Color)[i];
 
-			const player = new Player(name, color);
+			const player = new Player(this, name, color);
 
 			this.players.push(player);
 		}

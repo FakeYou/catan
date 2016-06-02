@@ -5,15 +5,16 @@ jest.unmock('../../Corner');
 jest.unmock('../../Player');
 jest.unmock('../../utils/Location');
 
-import Settlement from '../../pieces/Settlement';
+import Game from '../../Game';
 import Corner from '../../Corner';
 import Player from '../../Player';
+import Settlement from '../../pieces/Settlement';
 
 let player;
 
 describe('Settlement', () => {
 	beforeEach(() => {
-		player = new Player('test', Player.Color.RED);
+		player = new Player(new Game(), 'test', Player.Color.RED);
 	});
 
 	it('constructs with a `player` property', () => {
