@@ -1,8 +1,8 @@
 /* eslint-disable no-new */
 
-jest.unmock('../../entities/Player');
+jest.unmock('../Player');
 
-import Player from '../../entities/Player';
+import Player from '../Player';
 
 describe('Player', () => {
 	xit('constructs with `name` and `color` property', () => {

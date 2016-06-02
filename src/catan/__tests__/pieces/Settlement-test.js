@@ -2,11 +2,12 @@
 
 jest.unmock('../../pieces/Settlement');
 jest.unmock('../../Corner');
-jest.unmock('../../entities/Player');
+jest.unmock('../../Player');
+jest.unmock('../../utils/Location');
 
 import Settlement from '../../pieces/Settlement';
 import Corner from '../../Corner';
-import Player from '../../entities/Player';
+import Player from '../../Player';
 
 let player;
 

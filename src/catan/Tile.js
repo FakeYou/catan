@@ -1,7 +1,8 @@
-export default class Tile {
+import Location from './utils/Location';
+
+export default class Tile extends Location {
 	constructor(q, r, resource, number) {
-		this.q = q;
-		this.r = r;
+		super(q, r);
 
 		// Check if a valid `resource` was given.
 		if (!(resource in Tile.Resource)) {
@@ -53,17 +54,6 @@ export default class Tile {
 
 	get key() {
 		return Tile.key(this.q, this.r);
-	}
-
-	get cube() {
-		// For the `y` value when `q` and `r` are both `0` the resulting `y` would be `-0`.
-		// To prevent this behaviour and always return a postive zero we use `-q - z + 0`.
-		return [this.q, -this.q - this.r + 0, this.r];
-	}
-
-	get offset() {
-		const [x, y, z] = this.cube;
-		return [x, z + (x + (x & 1)) / 2];
 	}
 
 	static key(q, r) {

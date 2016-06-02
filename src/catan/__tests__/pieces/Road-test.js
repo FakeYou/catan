@@ -2,11 +2,12 @@
 
 jest.unmock('../../pieces/Road');
 jest.unmock('../../Edge');
-jest.unmock('../../entities/Player');
+jest.unmock('../../Player');
+jest.unmock('../../utils/Location');
 
 import Road from '../../pieces/Road';
 import Edge from '../../Edge';
-import Player from '../../entities/Player';
+import Player from '../../Player';
 
 let player;
 

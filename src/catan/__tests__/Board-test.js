@@ -2,6 +2,7 @@
 
 jest.unmock('../Board');
 jest.unmock('../Tile');
+jest.unmock('../utils/Location');
 
 import Board from '../Board';
 import Tile from '../Tile';

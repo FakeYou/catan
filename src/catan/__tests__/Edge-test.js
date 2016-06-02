@@ -1,6 +1,7 @@
 /* eslint-disable no-new */
 
 jest.unmock('../Edge');
+jest.unmock('../utils/Location');
 
 import Edge from '../Edge';
 

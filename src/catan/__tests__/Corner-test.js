@@ -1,6 +1,7 @@
 /* eslint-disable no-new */
 
 jest.unmock('../Corner');
+jest.unmock('../utils/Location');
 
 import Corner from '../Corner';
 

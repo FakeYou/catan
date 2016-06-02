@@ -1,6 +1,7 @@
 /* eslint-disable no-new */
 
 jest.unmock('../Tile');
+jest.unmock('../utils/Location');
 
 import Tile from '../Tile';
 
