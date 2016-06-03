@@ -18,6 +18,7 @@ describe('Player', () => {
 		game = new Game();
 		player = new Player(game, 'test', Player.Color.RED);
 	});
+	});
 
 	it('constructs with `name` and `color` properties', () => {
 		expect(player.name).toEqual('test');
