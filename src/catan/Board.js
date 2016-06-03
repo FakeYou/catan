@@ -15,7 +15,7 @@ export default class Board {
 
 	initTiles(tiles) {
 		tiles.forEach(tile => {
-			this.tiles[tile.key] = tile;
+			this.setTile(tile);
 		});
 	}
 
@@ -57,6 +57,18 @@ export default class Board {
 		return this.tiles[key];
 	}
 
+	getCorner(q, r, position) {
+		const key = Corner.key(q, r, position);
+
+		return this.corners[key];
+	}
+
+	getEdge(q, r, position) {
+		const key = Edge.key(q, r, position);
+
+		return this.edges[key];
+	}
+
 	getNeighbour(q, r, direction) {
 		const neighbor = this.getTile(q, r).getNeighbour(direction);
 		const key = Tile.key(...neighbor);
@@ -68,12 +80,20 @@ export default class Board {
 		return Object.values(this.tiles).filter(tile => tile.number === number);
 	}
 
+	setTile(tile) {
+		this.tiles[tile.key] = tile;
+	}
+
 	setEdge(edge) {
 		this.edges[edge.key] = edge;
 	}
 
 	setCorner(corner) {
 		this.corners[corner.key] = corner;
+	}
+
+	placeRoad(q, r, position) {
+		const edge = this.edges[Edge.key(q, r, position)];
 	}
 
 	static generateBeginnerBoard() {
