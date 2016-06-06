@@ -6,23 +6,27 @@ import Board from '../Board';
 import Tile from '../Tile';
 import Edge from '../Edge';
 import Corner from '../Corner';
+import Player from '../Player';
+import Road from '../pieces/Road';
 
 let board;
 let tiles;
+let player;
 
 describe('Board', () => {
 	beforeEach(() => {
 		tiles = [
-			new Tile(0, 0, Tile.Resource.DESERT),
-			new Tile(0, -1, Tile.Resource.FOREST, 2),
-			new Tile(1, -1, Tile.Resource.PASTURE, 3),
-			new Tile(1, 0, Tile.Resource.FIELD, 4),
-			new Tile(0, 1, Tile.Resource.HILL, 5),
-			new Tile(-1, 1, Tile.Resource.MOUNTAIN, 5),
-			new Tile(-1, 0, Tile.Resource.WATER),
+			new Tile(0, 0, Tile.Terrain.DESERT),
+			new Tile(0, -1, Tile.Terrain.FOREST, 2),
+			new Tile(1, -1, Tile.Terrain.PASTURE, 3),
+			new Tile(1, 0, Tile.Terrain.FIELD, 4),
+			new Tile(0, 1, Tile.Terrain.HILL, 5),
+			new Tile(-1, 1, Tile.Terrain.MOUNTAIN, 5),
+			new Tile(-1, 0, Tile.Terrain.WATER),
 		];
 
 		board = new Board(tiles);
+		player = new Player(null, 'test', Player.Color.RED);
 	});
 
 	it('constructs with a `tiles` property', () => {
@@ -51,5 +55,12 @@ describe('Board', () => {
 
 	it('gives all tiles with matching `number` property', () => {
 		expect(board.getTilesByNumber(5)).toEqual([tiles[4], tiles[5]]);
+	});
+
+	xit('has a method `placeRoad`', () => {
+		expect(board.placeRoad(0, 0, Edge.Position.NORTH, player)).toBe(true);
+
+		expect(board.getEdge(0, 0, Edge.Position.NORTH))
+			.toEqual(new Road(player, 0, 0, Edge.Position.NORTH));
 	});
 });

@@ -23,7 +23,7 @@ export default class Board {
 		Object.values(this.tiles).forEach(tile => {
 			const { q, r } = tile;
 
-			if (tile.resource !== Tile.Resource.WATER) {
+			if (tile.resource !== Tile.Terrain.WATER) {
 				this.setEdge(new Edge(q, r, Edge.Position.NORTH));
 				this.setEdge(new Edge(q, r, Edge.Position.EAST));
 				this.setEdge(new Edge(q, r, Edge.Position.WEST));
@@ -39,7 +39,7 @@ export default class Board {
 		Object.values(this.tiles).forEach(tile => {
 			const { q, r } = tile;
 
-			if (tile.resource !== Tile.Resource.WATER) {
+			if (tile.resource !== Tile.Terrain.WATER) {
 				this.setCorner(new Corner(q, r, Corner.Position.RIGHT));
 				this.setCorner(new Corner(q, r, Corner.Position.LEFT));
 
@@ -98,44 +98,44 @@ export default class Board {
 
 	static generateBeginnerBoard() {
 		const tiles = [
-			new Tile(3, 0, Tile.Resource.WATER),
-			new Tile(2, 1, Tile.Resource.WATER),
-			new Tile(1, 2, Tile.Resource.WATER),
-			new Tile(0, 3, Tile.Resource.WATER),
-			new Tile(0, 4, Tile.Resource.WATER),
-			new Tile(0, 5, Tile.Resource.WATER),
-			new Tile(0, 6, Tile.Resource.WATER),
-			new Tile(1, 6, Tile.Resource.WATER),
-			new Tile(2, 6, Tile.Resource.WATER),
-			new Tile(3, 6, Tile.Resource.WATER),
-			new Tile(4, 5, Tile.Resource.WATER),
-			new Tile(5, 4, Tile.Resource.WATER),
-			new Tile(6, 3, Tile.Resource.WATER),
-			new Tile(6, 2, Tile.Resource.WATER),
-			new Tile(6, 1, Tile.Resource.WATER),
-			new Tile(6, 0, Tile.Resource.WATER),
-			new Tile(5, 0, Tile.Resource.WATER),
-			new Tile(4, 0, Tile.Resource.WATER),
+			new Tile(3, 0, Tile.Terrain.WATER),
+			new Tile(2, 1, Tile.Terrain.WATER),
+			new Tile(1, 2, Tile.Terrain.WATER),
+			new Tile(0, 3, Tile.Terrain.WATER),
+			new Tile(0, 4, Tile.Terrain.WATER),
+			new Tile(0, 5, Tile.Terrain.WATER),
+			new Tile(0, 6, Tile.Terrain.WATER),
+			new Tile(1, 6, Tile.Terrain.WATER),
+			new Tile(2, 6, Tile.Terrain.WATER),
+			new Tile(3, 6, Tile.Terrain.WATER),
+			new Tile(4, 5, Tile.Terrain.WATER),
+			new Tile(5, 4, Tile.Terrain.WATER),
+			new Tile(6, 3, Tile.Terrain.WATER),
+			new Tile(6, 2, Tile.Terrain.WATER),
+			new Tile(6, 1, Tile.Terrain.WATER),
+			new Tile(6, 0, Tile.Terrain.WATER),
+			new Tile(5, 0, Tile.Terrain.WATER),
+			new Tile(4, 0, Tile.Terrain.WATER),
 
-			new Tile(3, 1, Tile.Resource.FOREST, 9),
-			new Tile(4, 1, Tile.Resource.HILL, 10),
-			new Tile(5, 1, Tile.Resource.MOUNTAIN, 8),
-			new Tile(2, 2, Tile.Resource.PASTURE, 2),
-			new Tile(3, 2, Tile.Resource.PASTURE, 4),
-			new Tile(4, 2, Tile.Resource.FOREST, 3),
-			new Tile(5, 2, Tile.Resource.PASTURE, 5),
-			new Tile(1, 3, Tile.Resource.MOUNTAIN, 10),
-			new Tile(2, 3, Tile.Resource.HILL, 6),
-			new Tile(3, 3, Tile.Resource.DESERT),
-			new Tile(4, 3, Tile.Resource.FIELD, 4),
-			new Tile(5, 3, Tile.Resource.PASTURE, 11),
-			new Tile(1, 4, Tile.Resource.FIELD, 12),
-			new Tile(2, 4, Tile.Resource.FOREST, 11),
-			new Tile(3, 4, Tile.Resource.MOUNTAIN, 3),
-			new Tile(4, 4, Tile.Resource.FIELD, 6),
-			new Tile(1, 5, Tile.Resource.FIELD, 9),
-			new Tile(2, 5, Tile.Resource.FOREST, 8),
-			new Tile(3, 5, Tile.Resource.HILL, 5),
+			new Tile(3, 1, Tile.Terrain.FOREST, 9),
+			new Tile(4, 1, Tile.Terrain.HILL, 10),
+			new Tile(5, 1, Tile.Terrain.MOUNTAIN, 8),
+			new Tile(2, 2, Tile.Terrain.PASTURE, 2),
+			new Tile(3, 2, Tile.Terrain.PASTURE, 4),
+			new Tile(4, 2, Tile.Terrain.FOREST, 3),
+			new Tile(5, 2, Tile.Terrain.PASTURE, 5),
+			new Tile(1, 3, Tile.Terrain.MOUNTAIN, 10),
+			new Tile(2, 3, Tile.Terrain.HILL, 6),
+			new Tile(3, 3, Tile.Terrain.DESERT),
+			new Tile(4, 3, Tile.Terrain.FIELD, 4),
+			new Tile(5, 3, Tile.Terrain.PASTURE, 11),
+			new Tile(1, 4, Tile.Terrain.FIELD, 12),
+			new Tile(2, 4, Tile.Terrain.FOREST, 11),
+			new Tile(3, 4, Tile.Terrain.MOUNTAIN, 3),
+			new Tile(4, 4, Tile.Terrain.FIELD, 6),
+			new Tile(1, 5, Tile.Terrain.FIELD, 9),
+			new Tile(2, 5, Tile.Terrain.FOREST, 8),
+			new Tile(3, 5, Tile.Terrain.HILL, 5),
 
 		];
 

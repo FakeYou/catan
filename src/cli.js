@@ -16,26 +16,26 @@ function hexToCoord(q, r) {
 
 function resourceColors(resource) {
 	switch (resource) {
-		case Tile.Resource.FOREST:
+		case Tile.Terrain.FOREST:
 			return clc.whiteBright.bgGreen;
-		case Tile.Resource.PASTURE:
+		case Tile.Terrain.PASTURE:
 			return clc.black.bgGreenBright;
-		case Tile.Resource.FIELD:
+		case Tile.Terrain.FIELD:
 			return clc.black.bgYellowBright;
-		case Tile.Resource.HILL:
+		case Tile.Terrain.HILL:
 			return clc.whiteBright.bgRed;
-		case Tile.Resource.MOUNTAIN:
+		case Tile.Terrain.MOUNTAIN:
 			return clc.black.bgBlackBright;
-		case Tile.Resource.DESERT:
+		case Tile.Terrain.DESERT:
 			return clc.bgWhite;
-		case Tile.Resource.WATER:
+		case Tile.Terrain.WATER:
 			return clc.bgCyan;
 		default:
 			return clc.black.bgMagentaBright;
 	}
 }
 
-function drawResource(x, y, resource) {
+function drawTerrain(x, y, resource) {
 	const color = resourceColors(resource);
 
 	process.stdout.write(clc.move.to(x + 3, y + 1) + color('   '));
@@ -97,7 +97,7 @@ function drawCorner(x, y, position, player) {
 
 Object.values(board.tiles).forEach(tile => {
 	const [x, y] = hexToCoord(...tile.offset);
-	drawResource(x, y, tile.resource);
+	drawTerrain(x, y, tile.resource);
 
 	drawNumber(x, y, tile.number, tile.resource);
 });
@@ -117,28 +117,28 @@ process.stdout.write(clc.move.lines(10));
 process.stdout.write(clc.move.to(20, 17));
 process.stdout.write(clc.blackBright('┌' + clc.whiteBright('1') + '┐'));
 process.stdout.write(clc.move.to(20, 18));
-process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Resource.HILL)(' ') + clc.blackBright('│'));
+process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Terrain.HILL)(' ') + clc.blackBright('│'));
 process.stdout.write(clc.move.to(20, 19));
 process.stdout.write(clc.blackBright('└─┘'));
 
 process.stdout.write(clc.move.to(23, 17));
 process.stdout.write(clc.blackBright('┌' + clc.whiteBright('5') + '┐┐┐┐┐'));
 process.stdout.write(clc.move.to(23, 18));
-process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Resource.MOUNTAIN)(' ║║║║') + clc.blackBright('│'));
+process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Terrain.MOUNTAIN)(' ║║║║') + clc.blackBright('│'));
 process.stdout.write(clc.move.to(23, 19));
 process.stdout.write(clc.blackBright('└─┘┘┘┘┘'));
 
 process.stdout.write(clc.move.to(30, 17));
 process.stdout.write(clc.blackBright('┌' + clc.whiteBright('2') + '┐┐'));
 process.stdout.write(clc.move.to(30, 18));
-process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Resource.FIELD)(' ║') + clc.blackBright('│'));
+process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Terrain.FIELD)(' ║') + clc.blackBright('│'));
 process.stdout.write(clc.move.to(30, 19));
 process.stdout.write(clc.blackBright('└─┘┘'));
 
 process.stdout.write(clc.move.to(34, 17));
 process.stdout.write(clc.blackBright('┌' + clc.whiteBright('4') + '┐┐┐┐'));
 process.stdout.write(clc.move.to(34, 18));
-process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Resource.PASTURE)(' ║║║') + clc.blackBright('│'));
+process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Terrain.PASTURE)(' ║║║') + clc.blackBright('│'));
 process.stdout.write(clc.move.to(34, 19));
 process.stdout.write(clc.blackBright('└─┘┘┘┘'));
 

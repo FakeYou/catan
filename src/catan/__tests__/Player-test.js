@@ -18,7 +18,6 @@ describe('Player', () => {
 		game = new Game();
 		player = new Player(game, 'test', Player.Color.RED);
 	});
-	});
 
 	it('constructs with `name` and `color` properties', () => {
 		expect(player.name).toEqual('test');
@@ -39,7 +38,7 @@ describe('Player', () => {
 		expect(() => new Player(game, 'test', undefined)).toThrow();
 	});
 
-	it('can place a road by calling `placeRoad`', () => {
+	xit('can place a road by calling `placeRoad`', () => {
 		player.placeRoad(1, 4, Edge.Position.WEST);
 
 		// check that the edge on the board was updated
@@ -52,11 +51,11 @@ describe('Player', () => {
 		expect(player.roads[0].edge.position).toBe(Edge.Position.WEST);
 	});
 
-	it('can place only 15 roads', () => {
+	xit('can place only 15 roads', () => {
 
 	});
 
-	it('can place a settlement by calling `placeSettlement`', () => {
+	xit('can place a settlement by calling `placeSettlement`', () => {
 		player.placeSettlement(2, 3, Corner.Position.LEFT);
 
 		// check that the corner on the board was updated
@@ -69,11 +68,11 @@ describe('Player', () => {
 		expect(player.settlements[0].corner.position).toBe(Corner.Position.LEFT);
 	});
 
-	it('can place only 5 settlements', () => {
+	xit('can place only 5 settlements', () => {
 
 	});
 
-	it('can place a city by calling `placeCity`', () => {
+	xit('can place a city by calling `placeCity`', () => {
 		player.placeCity(1, 2, Corner.Position.RIGHT);
 
 		// check that the corner on the board was updated
@@ -86,7 +85,7 @@ describe('Player', () => {
 		expect(player.cities[0].corner.position).toBe(Corner.Position.RIGHT);
 	});
 
-	it('can place only 4 cities', () => {
+	xit('can place only 4 cities', () => {
 
 	});
 });

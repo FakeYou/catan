@@ -5,13 +5,13 @@ export default class Tile extends Location {
 		super(q, r);
 
 		// Check if a valid `resource` was given.
-		if (!(resource in Tile.Resource)) {
-			throw new Error(`Invalid resource, should be one of ${Object.keys(Tile.Resource)}`);
+		if (!(resource in Tile.Terrain)) {
+			throw new Error(`Invalid resource, should be one of ${Object.keys(Tile.Terrain)}`);
 		}
 		this.resource = resource;
 
 		// For all resources except `water` and `desert` check if a valid `number` was given.
-		if (resource !== Tile.Resource.WATER && resource !== Tile.Resource.DESERT) {
+		if (resource !== Tile.Terrain.WATER && resource !== Tile.Terrain.DESERT) {
 			if (!Number.isInteger(number) || number < 2 || number > 12 || number === 7) {
 				throw new Error('Invalid number');
 			}
@@ -72,7 +72,7 @@ Tile.Direction = {
 	NORTHWEST: 'NORTHWEST',
 };
 
-Tile.Resource = {
+Tile.Terrain = {
 	FOREST: 'FOREST',
 	PASTURE: 'PASTURE',
 	FIELD: 'FIELD',
