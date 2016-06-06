@@ -115,42 +115,42 @@ Object.values(board.corners).forEach(corner => {
 process.stdout.write(clc.move.lines(10));
 
 process.stdout.write(clc.move.to(20, 17));
-process.stdout.write(clc.blackBright('┌' + clc.whiteBright('1') + '┐'));
+process.stdout.write(clc.blackBright(`┌${clc.whiteBright('1')}┐`));
 process.stdout.write(clc.move.to(20, 18));
-process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Terrain.HILL)(' ') + clc.blackBright('│'));
+process.stdout.write(clc.blackBright(`│${resourceColors(Tile.Terrain.HILL)(' ')}│`));
 process.stdout.write(clc.move.to(20, 19));
 process.stdout.write(clc.blackBright('└─┘'));
 
 process.stdout.write(clc.move.to(23, 17));
-process.stdout.write(clc.blackBright('┌' + clc.whiteBright('5') + '┐┐┐┐┐'));
+process.stdout.write(clc.blackBright(`┌${clc.whiteBright('5')}┐┐┐┐┐`));
 process.stdout.write(clc.move.to(23, 18));
-process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Terrain.MOUNTAIN)(' ║║║║') + clc.blackBright('│'));
+process.stdout.write(clc.blackBright(`│${resourceColors(Tile.Terrain.MOUNTAIN)(' ║║║║')}│`));
 process.stdout.write(clc.move.to(23, 19));
 process.stdout.write(clc.blackBright('└─┘┘┘┘┘'));
 
 process.stdout.write(clc.move.to(30, 17));
-process.stdout.write(clc.blackBright('┌' + clc.whiteBright('2') + '┐┐'));
+process.stdout.write(clc.blackBright(`┌${clc.whiteBright('2')}┐`));
 process.stdout.write(clc.move.to(30, 18));
-process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Terrain.FIELD)(' ║') + clc.blackBright('│'));
+process.stdout.write(clc.blackBright(`│${resourceColors(Tile.Terrain.FIELD)(' ║')}│`));
 process.stdout.write(clc.move.to(30, 19));
 process.stdout.write(clc.blackBright('└─┘┘'));
 
 process.stdout.write(clc.move.to(34, 17));
-process.stdout.write(clc.blackBright('┌' + clc.whiteBright('4') + '┐┐┐┐'));
+process.stdout.write(clc.blackBright(`┌${clc.whiteBright('4')}┐┐┐┐`));
 process.stdout.write(clc.move.to(34, 18));
-process.stdout.write(clc.blackBright('│') + resourceColors(Tile.Terrain.PASTURE)(' ║║║') + clc.blackBright('│'));
+process.stdout.write(clc.blackBright(`│${resourceColors(Tile.Terrain.PASTURE)(' ║║║')}│`));
 process.stdout.write(clc.move.to(34, 19));
 process.stdout.write(clc.blackBright('└─┘┘┘┘'));
 
 process.stdout.write(clc.move.to(20, 20));
-process.stdout.write(clc.blackBright('┌') + clc.whiteBright('8') + clc.blackBright('┐┐┐┐┐┐┐┐'));
+process.stdout.write(clc.blackBright(`┌${clc.whiteBright('8')}┐┐┐┐┐┐┐┐`));
 process.stdout.write(clc.move.to(20, 21));
 process.stdout.write(clc.blackBright('│ ││││││││'));
 process.stdout.write(clc.move.to(20, 22));
 process.stdout.write(clc.blackBright('└─┘┘┘┘┘┘┘┘'));
 
 process.stdout.write(clc.move.to(20, 23));
-process.stdout.write(clc.blackBright('┌') + clc.whiteBright('4') + clc.blackBright('┐┐┐┐'));
+process.stdout.write(clc.blackBright(`┌${clc.whiteBright('4')}┐┐┐┐`));
 process.stdout.write(clc.move.to(20, 24));
 process.stdout.write(clc.blackBright('│ ││││'));
 process.stdout.write(clc.move.to(20, 25));
