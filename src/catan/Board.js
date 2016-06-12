@@ -3,7 +3,8 @@ import Edge from './Edge';
 import Corner from './Corner';
 
 export default class Board {
-	constructor(tiles = [], edges = [], corners = []) {
+	constructor(game, tiles = [], edges = [], corners = []) {
+		this.game = game;
 		this.tiles = {};
 		this.edges = {};
 		this.corners = {};
@@ -94,9 +95,11 @@ export default class Board {
 
 	placeRoad(q, r, position) {
 		const edge = this.edges[Edge.key(q, r, position)];
+
+		if()
 	}
 
-	static generateBeginnerBoard() {
+	static generateBeginnerBoard(game) {
 		const tiles = [
 			new Tile(3, 0, Tile.Terrain.WATER),
 			new Tile(2, 1, Tile.Terrain.WATER),
@@ -139,6 +142,6 @@ export default class Board {
 
 		];
 
-		return new Board(tiles);
+		return new Board(game, tiles);
 	}
 }
