@@ -5,22 +5,21 @@ import Board from './Board';
 import Player from './Player';
 
 export default class Game extends EventEmitter {
-	constructor(numberOfPlayers = 3) {
-		this.numberOfPlayers = numberOfPlayers;
-		this.players = [];
+	constructor() {
+		super();
 
-		this.board = Board.generateBeginnerBoard(this);
 		this.state = Game.Phases.SETUP;
+		this.maxPlayers = 4;
+		this.players = [];
+		this.board = null;
+	}
 
-		this.emitter = new Emitter();
-
-		for (let i = 0; i < numberOfPlayers; i++) {
-			const name = faker.internet.domainWord();
-			const color = Object.values(Player.Color)[i];
-
-			const player = new Player(this, name, color);
-
+	addPlayer(player) {
+		if(this.players.length < this.maxPlayers) {
 			this.players.push(player);
+		}
+		else {
+			throw new Error(`Maximum of ${this.maxPlayers} players allowed.`);
 		}
 	}
 }

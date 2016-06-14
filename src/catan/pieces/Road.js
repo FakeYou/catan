@@ -22,4 +22,10 @@ export default class Road {
 			this.edge = new Edge(q, r, position);
 		}
 	}
+
+	get key() {
+		if(this.edge) {
+			return this.edge.key;
+		}
+	}
 }

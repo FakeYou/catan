@@ -96,7 +96,7 @@ export default class Board {
 	placeRoad(q, r, position) {
 		const edge = this.edges[Edge.key(q, r, position)];
 
-		if()
+		throw new Error('unimplemented');
 	}
 
 	static generateBeginnerBoard(game) {
@@ -139,7 +139,6 @@ export default class Board {
 			new Tile(1, 5, Tile.Terrain.FIELD, 9),
 			new Tile(2, 5, Tile.Terrain.FOREST, 8),
 			new Tile(3, 5, Tile.Terrain.HILL, 5),
-
 		];
 
 		return new Board(game, tiles);

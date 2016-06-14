@@ -22,4 +22,10 @@ export default class City {
 			this.corner = new Corner(q, r, position);
 		}
 	}
+
+	get key() {
+		if(this.corner) {
+			return this.corner.key;
+		}
+	}
 }

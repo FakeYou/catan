@@ -55,7 +55,7 @@ function drawNumber(x, y, number, resource) {
 		string = `${number} `;
 	}
 	else {
-		string = ` ${number} `;
+		string = `${number}`;
 	}
 
 	process.stdout.write(clc.move.to(x + 3, y + 2) + color(string));
@@ -99,7 +99,7 @@ Object.values(board.tiles).forEach(tile => {
 	const [x, y] = hexToCoord(...tile.offset);
 	drawTerrain(x, y, tile.resource);
 
-	drawNumber(x, y, tile.number, tile.resource);
+	drawNumber(x, y, `${tile.number||0},${tile.q},${tile.r}`, tile.resource);
 });
 
 Object.values(board.edges).forEach(edge => {
