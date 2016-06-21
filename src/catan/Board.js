@@ -30,8 +30,8 @@ export default class Board {
 				this.setEdge(new Edge(q, r, Edge.Position.WEST));
 
 				this.setEdge(new Edge(...tile.getNeighbour(Tile.Direction.SOUTH), Edge.Position.NORTH));
-				this.setEdge(new Edge(...tile.getNeighbour(Tile.Direction.SOUTHWEST), Edge.Position.EAST));
-				this.setEdge(new Edge(...tile.getNeighbour(Tile.Direction.SOUTHEAST), Edge.Position.WEST));
+				this.setEdge(new Edge(...tile.getNeighbour(Tile.Direction.SOUTHWEST), Edge.Position.WEST));
+				this.setEdge(new Edge(...tile.getNeighbour(Tile.Direction.SOUTHEAST), Edge.Position.EAST));
 			}
 		});
 	}
